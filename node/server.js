@@ -1,6 +1,8 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = process.env.PORT || 4000;
+
 app.use(cors())
 app.get('/', (req, res) => {
   res.json([
@@ -18,6 +20,6 @@ app.get('/', (req, res) => {
     }
   ])
 })
-app.listen(4000, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log('connected on port 4000')
 })
